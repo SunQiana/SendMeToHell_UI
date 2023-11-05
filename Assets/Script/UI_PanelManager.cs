@@ -24,6 +24,8 @@ public class UI_PanelManager
         }
         stackPanel.Push(nextPanel);
         GameObject panelGo = uI_Manager.GetSingleUI(nextPanel.UIType);
+        nextPanel.Init(new UI_Tool(panelGo));
+        nextPanel.OnEnter();
     }
 
     public void Pop()
