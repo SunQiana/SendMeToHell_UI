@@ -20,5 +20,6 @@ public class CardPrefabGroup : ScriptableObject
         return result;
     }
 
-    public GameObject GetCardGameObject(string name) => cardDic[name];
+    public GameObject GetSingalCard(string name) => cardDic[name];
+
 }

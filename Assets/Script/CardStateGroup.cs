@@ -12,14 +12,14 @@ public class CardStateGroup
 
     public CardState GetSingalCardState(string cardGUID) => CardState[cardGUID];
 
-    public List<CardState> GetCardStateList(Dictionary<string, GameObject> cardDic)
+    public Dictionary<string,CardState> GetCardStateList(Dictionary<string, GameObject> cardDic)
     {
-        List<CardState> result = new();
+        Dictionary<string,CardState> stateDic = new();
         foreach (var name in cardDic.Keys.ToArray())
         {
-            if (CardState.TryGetValue(name, out CardState state) != null)
-                result.Add(state);
+            if (CardState.TryGetValue(name, out CardState state) != false)
+                stateDic.Add(name,state);
         }
-        return result;
+        return stateDic;
     }
 }

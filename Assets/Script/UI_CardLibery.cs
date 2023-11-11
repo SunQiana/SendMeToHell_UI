@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class UI_CardLibery : UI_BasePanel
 {
-    public CardPrefabGroup cardPrefabGroup;
+    [SerializeField]
+    private CardPrefabGroup cardPrefabGroup;
+    [ser]
 
     private List<Card> cards;
     public UI_CardLibery(CardStateGroup cardStateGroup)
@@ -16,10 +18,32 @@ public class UI_CardLibery : UI_BasePanel
 
     void WriteCardsState(CardStateGroup cardStateGroup)
     {
-        List<CardState> StateList = cardStateGroup.GetCardStateList(cardGOGroup.GetDicAllCard());
-        foreach(var state in StateList)
+        var cardDic = cardPrefabGroup.GetDicAllCard();
+        var stateDic = cardStateGroup.GetCardStateList(cardDic);
+        foreach(var nameInStatedic in stateDic.Keys)
         {
-            var card = new Card();
+            foreach(var card in cardDic)
+            {
+              if(card.Key == nameInStatedic)
+              {
+                var newCard = new Card(nameInStatedic,card.Value,stateDic[nameInStatedic]);
+                cards.Add(newCard);
+              }
+            }
         }
     }
+
+    void ShowCardState()
+    {
+
+    }
+
+    private int _testint;
+    public int TestInt
+    {
+        get=> _testint;
+        set=> _testint = value;
+    }
+
+    
 }
