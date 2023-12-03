@@ -5,15 +5,15 @@ using UnityEngine;
 public class CardLiberyManager : MonoBehaviour
 {
     [SerializeField]
-    private CardPrefabGroup cardPrefabGroup;
+    private CardDataGroup cardPrefabGroup;
     [SerializeField]
     private GameObject uiGO;
 
     private CardLibery_UI ui;
     private CardLibery_Utility utility;
-    private CardStateGroup stateGroup;
+    private CardServerDataGroup stateGroup;
 
-    public CardLiberyManager(CardStateGroup stateGroup)
+    public CardLiberyManager(CardServerDataGroup stateGroup)
     {
         Init();
         this.stateGroup = stateGroup;

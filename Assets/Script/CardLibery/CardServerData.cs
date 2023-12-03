@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class CardServerData
 {
-    private bool isStared = false;
-    private string unlockedDate = null;
-    private CardState cardState = CardState.Hidden;
-    private string cardID = "";
+    public bool isStared {get; private set;} = false;
+    public string unlockedDate {get; private set;} = "2000/07/25";
+    public CardState cardState {get; private set;} = CardState.Hidden;
+    public string cardID {get; private set;} = "0";
 
     public CardServerData(string cardID, GameObject cardGO, bool isStared, string unlockedDate, CardState cardState)
     {

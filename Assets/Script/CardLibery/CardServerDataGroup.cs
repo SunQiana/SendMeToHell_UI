@@ -4,23 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class CardStateGroup
+public record CardServerDataGroup
 {
-    private Dictionary<string, CardServerData> cardServerDataDic;
+    public List<CardServerData> cardServerDataList {get; private set;}
 
-    public CardStateGroup(Dictionary<string, CardServerData> CardServerDataDic) => this.cardServerDataDic = CardServerDataDic;
-
-    public CardServerData TryGetSingalCardServerData(string cardID, out bool resultFound)
+    public CardServerDataGroup(List<CardServerData> cardServerDataList)
     {
-        if (cardServerDataDic.TryGetValue(cardID, out CardServerData cardServerData))
-        {
-            resultFound = true;
-            return cardServerData;
-        }
-        else
-        {
-            resultFound = false;
-            return null;
-        }
+        cardServerDataList = new();
+        this.cardServerDataList = cardServerDataList;
     }
 }

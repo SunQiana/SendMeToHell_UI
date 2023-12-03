@@ -10,12 +10,16 @@ public enum CardState
 [System.Serializable]
 public class CardDataBase
 {
-    private bool isStared = false;
-    private string unlockedDate = null;
-    private CardState cardState = CardState.Hidden;
-    private string cardID = "";
-
-    private GameObject cardGo = null;
+    [SerializeField]
+    public bool isStared = false;
+    [SerializeField]
+    public string unlockedDate = null;
+    [SerializeField]
+    public CardState cardState = CardState.Hidden;
+    [SerializeField]
+    public string cardID = "";
+    [SerializeField]
+    public GameObject cardGo = null;
 
     public CardDataBase(string cardID, GameObject cardGO)
     {

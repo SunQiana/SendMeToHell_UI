@@ -1,18 +1,15 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Card", menuName = "CardLiberyItems/Card")]
-public class CardData
+[CreateAssetMenu(fileName = "CardData", menuName = "CardLiberyItems/CardData")]
+public class CardData : ScriptableObject
 {
+    [SerializeField]
     private CardDataBase _data;
     public CardDataBase data
     {
         get => _data;
-        set
-        {
-            if (_data == null)
-                _data = value;
-        }
     }
+
 
 }
 
