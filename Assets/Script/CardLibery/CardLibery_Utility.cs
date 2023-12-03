@@ -4,27 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class CardLibery_Utility : ICardLibery
+public class CardLibery_Utility
 {
-  private CardDataGroup cardDataGroup;
-  public CardLibery_Utility(CardDataGroup cardDataGroup)
+  private CardServerDataGroup cardServerDataGroup;
+  public CardLibery_Utility(CardServerDataGroup cardServerDataGroup)
   {
-    this.cardDataGroup = cardDataGroup; 
+    this.cardServerDataGroup = cardServerDataGroup; 
   }
 
-  public void WriteCardsState(CardServerDataGroup cardServerDataGroup)
+  public List<(string,CardState)> GetCardIndexByDefault()
   {
-    var cardDataList = cardDataGroup.CardDataList;
-    var cardServerDataList = cardServerDataGroup.cardServerDataList;
-    
-    foreach (var cardData in cardDataList)
+    var result = new List<(string,CardState)>();
+    foreach(var item in cardServerDataGroup.cardServerDataList)
     {
-      foreach(var CardSData in cardServerDataList)
-      {
-       // if(CardSD.cardID == cardGO.)
-      }
-      
+      result.Add((item.cardID,item.cardState));
     }
+    return result;
   }
+
 }
 

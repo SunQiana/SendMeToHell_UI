@@ -1,5 +1,10 @@
 using UnityEngine;
-
+public enum CardState
+{
+    Hidden,
+    Unlocked,
+    Locked,
+}
 public class CardServerData
 {
     public bool isStared {get; private set;} = false;

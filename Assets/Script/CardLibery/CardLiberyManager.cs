@@ -2,38 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardLiberyManager : MonoBehaviour
+public class CardLiberyManager : UI_BasePanel
 {
     [SerializeField]
-    private CardDataGroup cardPrefabGroup;
+    private CardDataGroup cardDataGroup;
+
     [SerializeField]
-    private GameObject uiGO;
+    private GameObject UIGO;
 
-    private CardLibery_UI ui;
-    private CardLibery_Utility utility;
-    private CardServerDataGroup stateGroup;
 
-    public CardLiberyManager(CardServerDataGroup stateGroup)
+    private CardServerDataGroup cardServerDataGroup;
+
+    public CardLiberyManager(CardServerDataGroup cardServerDataGroup)
     {
         Init();
-        this.stateGroup = stateGroup;
+        this.cardServerDataGroup = cardServerDataGroup;
     }
-
     void Init()
     {
-        if(cardPrefabGroup == null)
+        if (cardDataGroup == null)
         {
             Debug.Log("No CardData Exist");
             return;
         }
-        ui = new(uiGO);
-        utility = new(cardPrefabGroup);
+        if (UIGO == null)
+        {
+            Debug.Log("No UI Exist");
+            return;
+        }
     }
 
-    void ShowCards()
-    {
-        utility.WriteCardsState(stateGroup);
-    
-    }
- 
+    void On
+
 }
