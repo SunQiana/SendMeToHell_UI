@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,8 +11,9 @@ public class CardLiberyManager : UI_BasePanel
     [SerializeField]
     private GameObject UIGO;
 
-
     private CardServerDataGroup cardServerDataGroup;
+    public Action OnCardsRefresh;
+    public Action OnCardLiberyExit;
 
     public CardLiberyManager(CardServerDataGroup cardServerDataGroup)
     {
@@ -32,6 +34,5 @@ public class CardLiberyManager : UI_BasePanel
         }
     }
 
-    void On
 
 }

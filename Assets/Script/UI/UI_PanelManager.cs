@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_PanelManager 
+/*public class UI_PanelManager 
 {
     private Stack<UI_BasePanel> stackPanel;
     private UI_Manager uI_Manager;
@@ -23,8 +23,6 @@ public class UI_PanelManager
             panel.OnPause();
         }
         stackPanel.Push(nextPanel);
-        GameObject panelGo = uI_Manager.GetSingleUI(nextPanel.UIType);
-        nextPanel.Init(new UI_Tool(panelGo));
         nextPanel.OnEnter();
     }
 
@@ -35,4 +33,4 @@ public class UI_PanelManager
         if (stackPanel.Count > 0)
             stackPanel.Peek().OnResume();
     }
-}
+}*/

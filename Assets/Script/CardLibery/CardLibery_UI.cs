@@ -47,8 +47,5 @@ public class CardLibery_UI
     }
 
 
-    public override void OnEnter()
-    {
 
-    }
 }
